@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stage Maru | 스테이지 마루</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.9);
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    z-index:1000;
+}
+
+nav a{
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+nav a:hover{
+    color:white;
+}
+
+.lang-btn{
+    position:absolute;
+    right:30px;
+    top:20px;
+    background:#d4af37;
+    border:none;
+    padding:5px 15px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+header{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:70px;
+    background:rgba(0,0,0,0.7);
+    padding:30px 50px;
+    letter-spacing:4px;
+}
+
+section{
+    padding:120px 20px;
+    text-align:center;
+}
+
+h2{
+    color:#d4af37;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+.services, .projects{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:40px;
+    width:280px;
+    border:1px solid #d4af37;
+    transition:0.3s;
+}
+
+.card:hover{
+    background:#111;
+    transform:translateY(-10px);
+}
+
+footer{
+    background:black;
+    padding:30px;
+    text-align:center;
+    font-size:14px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#services">SERVICES</a>
+<a href="#projects">PROJECTS</a>
+<a href="#contact">CONTACT</a>
+<button class="lang-btn" onclick="toggleLang()">ENG</button>
+</nav>
+
+<header>
+<h1>STAGE MARU</h1>
+</header>
+
+<section id="about">
+<h2 id="about-title">회사 소개</h2>
+<p id="about-text">
+Stage Maru는 전문 무대 설치, 조명 시스템, LED 스크린 및 
+공연 제작 서비스를 제공하는 대한민국 무대 전문 기업입니다.
+</p>
+</section>
+
+<section id="services">
+<h2 id="service-title">서비스</h2>
+<div class="services">
+<div class="card" id="s1">무대 설치</div>
+<div class="card" id="s2">조명 & 트러스 시스템</div>
+<div class="card" id="s3">LED 스크린</div>
+<div class="card" id="s4">콘서트 제작</div>
+</div>
+</section>
+
+<section id="projects">
+<h2 id="project-title">프로젝트</h2>
+<div class="projects">
+<div class="card">Music Festival 2025</div>
+<div class="card">K-POP Concert</div>
+<div class="card">Corporate Event</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 id="contact-title">문의하기</h2>
+<p id="contact-text">
+이메일: info@stagemaru.com <br>
+전화: +82-10-0000-0000 <br>
+서울, 대한민국
+</p>
+</section>
+
+<footer>
+© 2026 Stage Maru. All Rights Reserved.
+</footer>
+
+<script>
+let korean = true;
+
+function toggleLang(){
+    if(korean){
+        document.getElementById("about-title").innerText="About Us";
+        document.getElementById("about-text").innerText=
+        "Stage Maru is a professional Korean stage production company specializing in stage construction, lighting systems, LED screens and concert production.";
+        document.getElementById("service-title").innerText="Services";
+        document.getElementById("project-title").innerText="Projects";
+        document.getElementById("contact-title").innerText="Contact";
+        document.getElementById("contact-text").innerHTML=
+        "Email: info@stagemaru.com <br> Phone: +82-10-0000-0000 <br> Seoul, South Korea";
+        document.querySelector(".lang-btn").innerText="KOR";
+        korean=false;
+    }else{
+        location.reload();
+    }
+}
+</script>
+
+</body>
+</html>
